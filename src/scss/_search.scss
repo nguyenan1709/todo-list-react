@@ -1,0 +1,23 @@
+.app-input {
+    position: relative;
+
+    input {
+        width: 400px;
+    }
+
+    .append-text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70px;
+        height: 38px;
+        background: blue;
+        color: white;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
