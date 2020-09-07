@@ -8,9 +8,15 @@ class TaskList extends Component {
         this.state = {  }
     }
     render() { 
-        var { propTask } = this.props // var propTask = this.props.propTask
-        var eleTaskItem = propTask.map((item, index) => {
-            return <TaskItem key={item.id} index={index} propTask={item}/>
+        let { propTask } = this.props // var propTask = this.props.propTask
+        let eleTaskItem = propTask.map((item, index) => {
+            return <TaskItem 
+                        key={index} 
+                        index={index} 
+                        propTask={item}
+                        onUpdateStatus = { this.props.onUpdateStatus }
+                        onDelete =  { this.props.onDelete }
+                    />
         })
 
         return (  

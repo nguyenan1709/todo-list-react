@@ -5,22 +5,36 @@ class TaskItem extends Component {
         super(props);
         this.state = {  }
     }
+
+    onUpdateStatus = () => {
+        this.props.onUpdateStatus(this.props.propTask.id)
+    }
+
+    onDelete = () => {
+        this.props.onDelete(this.props.propTask.id)
+    }
+
     render() { 
         var { propTask } = this.props
         return (  
             <tr>
-                <td>{ propTask.id }</td>
+                <td>{ this.props.index }</td>
                 <td>{ propTask.name }</td>
 
-                <td>
-                    <span className={propTask.status === true ? 'text-success': 'text-danger'}>
+                <td  onClick={ this.onUpdateStatus }>
+                    <span 
+                        className={propTask.status === true ? 'text-success': 'text-danger'} 
+                    >
                         {propTask.status === true ? 'Kích hoạt' : 'Ẩn'}
                     </span>
                 </td>
 
                 <td>
                     <button className="btn btn-warning btn-sm">Sửa</button> &nbsp;
-                    <button className="btn btn-danger btn-sm">Xóa</button>
+                    <button 
+                        className="btn btn-danger btn-sm"
+                        onClick={ this.onDelete }
+                    >Xóa</button>
                 </td>
             </tr>
         );
